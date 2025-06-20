@@ -88,22 +88,50 @@ export default {
 
         modal.querySelectorAll('.color-preset:not(.bg-preset)').forEach(preset => {
           preset.addEventListener('click', () => {
-            textColorPicker.value = preset.dataset.color === 'white' ? '#ffffff' : 
-                                   preset.dataset.color === 'black' ? '#000000' :
-                                   preset.dataset.color;
+            const color = preset.dataset.color;
+            if (color === 'white') {
+              textColorPicker.value = '#ffffff';
+            } else if (color === 'black') {
+              textColorPicker.value = '#000000';
+            } else if (color === 'red') {
+              textColorPicker.value = '#ff0000';
+            } else if (color === 'blue') {
+              textColorPicker.value = '#0000ff';
+            } else if (color === 'green') {
+              textColorPicker.value = '#008000';
+            } else if (color === 'yellow') {
+              textColorPicker.value = '#ffff00';
+            } else if (color === 'purple') {
+              textColorPicker.value = '#800080';
+            } else if (color === 'orange') {
+              textColorPicker.value = '#ffa500';
+            }
             updatePreview();
           });
         });
 
         modal.querySelectorAll('.bg-preset').forEach(preset => {
           preset.addEventListener('click', () => {
-            if (preset.dataset.color === 'transparent') {
+            const color = preset.dataset.color;
+            if (color === 'transparent') {
               bgColorPicker.value = '#ffffff';
               preview.style.backgroundColor = 'transparent';
             } else {
-              bgColorPicker.value = preset.dataset.color === 'white' ? '#ffffff' : 
-                                   preset.dataset.color === 'black' ? '#000000' :
-                                   preset.dataset.color;
+              if (color === 'white') {
+                bgColorPicker.value = '#ffffff';
+              } else if (color === 'black') {
+                bgColorPicker.value = '#000000';
+              } else if (color === 'lightgray') {
+                bgColorPicker.value = '#d3d3d3';
+              } else if (color === 'lightblue') {
+                bgColorPicker.value = '#add8e6';
+              } else if (color === 'lightgreen') {
+                bgColorPicker.value = '#90ee90';
+              } else if (color === 'lightyellow') {
+                bgColorPicker.value = '#ffffe0';
+              } else if (color === 'lightpink') {
+                bgColorPicker.value = '#ffb6c1';
+              }
               updatePreview();
             }
           });
