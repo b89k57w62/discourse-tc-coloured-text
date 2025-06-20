@@ -1,5 +1,11 @@
 en:
   composer:
     color_ui_button_title: Color the text
+    color_picker_title: Choose Colors
+    text_color: Text Color
+    background_color: Background Color
+    preview: Preview
+    apply: Apply
+    cancel: Cancel
   js:
     color_ui_button_substitute: substitute this text

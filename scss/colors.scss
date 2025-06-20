@@ -10,3 +10,128 @@
     border-radius: 2px;
   }
 }
+
+.color-picker-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .color-picker-content {
+    background: var(--secondary);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    h3 {
+      margin: 0 0 20px 0;
+      color: var(--primary);
+      font-size: 1.2em;
+    }
+
+    .color-section {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      .color-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input[type="color"] {
+          width: 60px;
+          height: 40px;
+          border: 2px solid var(--primary-low);
+          border-radius: 4px;
+          cursor: pointer;
+          background: none;
+        }
+
+        .preset-colors {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+
+          .color-preset {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid var(--primary-low);
+            transition: transform 0.2s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
+
+    .preview-section {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      .color-preview {
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: 1px solid var(--primary-low);
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+
+    .button-section {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &.btn-primary {
+          background-color: var(--tertiary);
+          color: var(--secondary);
+        }
+
+        &.btn-secondary {
+          background-color: var(--primary-low);
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
