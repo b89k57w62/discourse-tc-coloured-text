@@ -138,8 +138,8 @@ export default {
         });
 
         applyBtn.addEventListener('click', () => {
-          const textColor = textColorPicker.value.replace('#', '');
-          const bgColor = bgColorPicker.value.replace('#', '');
+          const textColor = textColorPicker.value;
+          const bgColor = bgColorPicker.value;
           composer.applySurround(`[wrap=color color=${textColor} bgcolor=${bgColor}]`, '[/wrap]', 'placeholder_coloured_text');
           document.body.removeChild(modal);
         });
