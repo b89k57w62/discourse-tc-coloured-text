@@ -18,8 +18,14 @@ export default {
       I18n.translations[currentLocale].js.composer.placeholder_coloured_text = settings.default_text;
 
       const createColorPicker = (composer) => {
+        const existingModal = document.querySelector('.color-picker-modal');
+        if (existingModal) {
+          return;
+        }
+
         const modal = document.createElement('div');
         modal.className = 'color-picker-modal';
+        modal.style.zIndex = '999999';
         modal.innerHTML = `
           <div class="color-picker-content">
             <h3>${I18n.t(themePrefix('composer.color_picker_title'))}</h3>
