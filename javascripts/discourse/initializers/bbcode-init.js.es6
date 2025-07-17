@@ -25,7 +25,7 @@ export default {
 
         const modal = document.createElement('div');
         modal.className = 'color-picker-modal';
-        modal.style.zIndex = '999999';
+        modal.style.setProperty('z-index', '999999', 'important');
         modal.innerHTML = `
           <div class="color-picker-content">
             <h3>${I18n.t(themePrefix('composer.color_picker_title'))}</h3>
